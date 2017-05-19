@@ -1,6 +1,83 @@
 mixin footer(data)
     footer.footer.not-styleLink
         .container
+            .row
+                .col-xl-2.col-lg-3.col-xs-12
+                    .footer__logoBlock
+                        a(href="#").footer__logo: +img('assets/footer/logo', 'png')
+                        br
+                        p.footer__copyright-shop © 2017 Интернет-магазин «Silver Flower»
+                .col-lg-6.col-md-9
+                    .footer__list-sections
+                        .footer__list-sections-section
+                            p.footer__list-title: a(href="#"): b.color-birch: span.color-birch__title Компания
+                            .footer__list
+                                ul
+                                    li: a(href='#').color-white: span.color-white__title Новости
+                                    li: a(href='#').color-white: span.color-white__title Вакансии
+                                    li: a(href='#').color-white: span.color-white__title Оплата
+                                    li: a(href='#').color-white: span.color-white__title Система скидок
+                                    li: a(href='#').color-white: span.color-white__title Поставщикам
+                                ul
+                                    li: a(href='#').color-white: span.color-white__title Доставка
+                                    li: a(href='#').color-white: span.color-white__title Возврат и обмен
+                                    li: a(href='#').color-white: span.color-white__title Доп. услуги
+                                    li: a(href='#').color-white: span.color-white__title Контакты
+                        .footer__list-sections-section
+                            p.footer__list-title: a(href="#"): b.color-birch: span.color-birch__title Каталог
+                            .footer__list
+                                ul
+                                    li: a(href='#').color-white: span.color-white__title Женская одежда
+                                    li: a(href='#').color-white: span.color-white__title Мужская одежда
+                                    li: a(href='#').color-white: span.color-white__title Детская одежда
+                                    li: a(href='#').color-white: span.color-white__title Аксессуары
+                                    li: a(href='#').color-white: span.color-white__title Распродажа
+                .col-xl-2.col-md-3
+                    p.footer__list-title: a(href="#"): b.color-birch: span.color-birch__title.hidden-sm-down &nbsp;
+                    .footer__list.footer__list_mobileCenter
+                        ul
+                            li: a(href='#').color-white: span.color-white__title.color-white__title_viewBorder.color-white__title_dashed Скачать прайс-лист
+                            li: a(href='#').color-white: span.color-white__title.color-white__title_viewBorder.color-white__title_dashed Скачать каталог
+
+                .col-xl-2.col-md-12
+                    .hidden-xl-up
+                        .hidden-sm-down
+                            br
+                            hr
+                    .row
+                        .col-xl-12.col-md-3.col-xs-12
+                            a(href="#").footer__link-callback: span СВЯЖИТЕСЬ С НАМИ
+                        .col-xl-12.col-md-3.col-sm-4.col-xs-6
+                            a(href='#').footer__contact.color-white
+                                span.db: b Оптовые продажи:
+                                span.db: span.color-white__title +7 (905) 456 12 45
+                        .col-xl-12.col-md-3.col-sm-4.col-xs-6
+                            a(href='#').footer__contact.color-white
+                                span.db: b Розничные продажи:
+                                span.db: span.color-white__title +7 (905) 456 12 12
+                        .col-xl-12.col-md-3.col-sm-44.col-xs-12
+                            .footer__contact.color-white
+                                span.db: b Время работы:
+                                span.db пн-сб с 9:00 до 21:00
+
+
+            br
+            a(href="#").footer__copyrightIt
+                span.footer__copyrightIt-title Разработка и продвижение сайта #[span.hidden-xs-down —]
+                br.hidden-sm-up
+                span.footer__copyrightIt-label ИНСАЙТ
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

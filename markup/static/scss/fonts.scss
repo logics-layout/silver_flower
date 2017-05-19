@@ -13,33 +13,49 @@
 // 800 -> Heavy, Extra Bold
 // 900 -> Black
 
-@include font-face("HelveticaNeueCyr", "../fonts/HelveticaNeueCyr/HelveticaNeueCyr-Black", $file-formats: eot woff ttf svg){
+@include font-face("Open Sans", "../fonts/opensans/opensans", $file-formats: woff woff2 ttf){
   font-style: normal;
-  font-weight: 900;
+  font-weight: 400;
+};
+@include font-face("Open Sans", "../fonts/opensans/opensansitalic", $file-formats: woff woff2 ttf){
+  font-style: italic;
+  font-weight: 400;
 };
 
-@include font-face("HelveticaNeueCyr", "../fonts/HelveticaNeueCyr/HelveticaNeueCyr-Bold", $file-formats: eot woff ttf svg){
+@include font-face("Open Sans", "../fonts/opensans/opensansbold", $file-formats: woff woff2 ttf){
   font-style: normal;
-  font-weight: bold;
+  font-weight: 700;
+};
+@include font-face("Open Sans", "../fonts/opensans/opensansbolditalic", $file-formats: woff woff2 ttf){
+  font-style: italic;
+  font-weight: 700;
 };
 
-@include font-face("HelveticaNeueCyr", "../fonts/HelveticaNeueCyr/HelveticaNeueCyr-Light", $file-formats: eot woff ttf svg){
+@include font-face("Open Sans", "../fonts/opensans/opensansextrabold", $file-formats: woff woff2 ttf){
+  font-style: normal;
+  font-weight: 800;
+};
+@include font-face("Open Sans", "../fonts/opensans/opensansextrabolditalic", $file-formats: woff woff2 ttf){
+  font-style: italic;
+  font-weight: 800;
+};
+
+@include font-face("Open Sans", "../fonts/opensans/opensanslight", $file-formats: woff woff2 ttf){
   font-style: normal;
   font-weight: 300;
 };
-
-@include font-face("HelveticaNeueCyr", "../fonts/HelveticaNeueCyr/HelveticaNeueCyr-Medium", $file-formats: eot woff ttf svg){
-  font-style: normal;
-  font-weight: 500;
+@include font-face("Open Sans", "../fonts/opensans/opensanslightitalic", $file-formats: woff woff2 ttf){
+  font-style: italic;
+  font-weight: 300;
 };
 
-//@include font-face("HelveticaNeueCyr", "../fonts/HelveticaNeueCyr/HelveticaNeueCyr-Roman", $file-formats: eot woff ttf svg){
-//  font-style: normal;
-//  font-weight: bold;
-//};
-
-@include font-face("HelveticaNeueCyr", "../fonts/HelveticaNeueCyr/HelveticaNeueCyr-Thin", $file-formats: eot woff ttf svg){
+@include font-face("Open Sans", "../fonts/opensans/opensanssemibold", $file-formats: woff woff2 ttf){
   font-style: normal;
-  font-weight: 100;
+  font-weight: 600;
 };
+@include font-face("Open Sans", "../fonts/opensans/opensanssemibolditalic", $file-formats: woff woff2 ttf){
+  font-style: italic;
+  font-weight: 600;
+};
+
 

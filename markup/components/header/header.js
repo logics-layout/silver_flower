@@ -1,29 +1,35 @@
-// var _fnMenuHeaderTop = function(toggle, list, slide) {
-//     var className, el, time;
-//     time = 300;
-//     el = toggle.closest('.mobile-list-anim');
-//     className = 'active';
-//
-//     if (toggle.prop("checked")) {
-//         if(slide) list.stop().slideDown(time);
-//         el.add(list).addClass(className);
-//     } else {
-//         if(slide) list.stop().slideUp(time);
-//         el.add(list).removeClass(className);
-//     }
-// };
-//
-// var menuHeaderTopToggle = $('#header-bottom-toggleMenuMbl');
-// var menuHeaderTopList = $('.header-bottom-nav');
-//
-// menuHeaderTopToggle.change(function() {_fnMenuHeaderTop(menuHeaderTopToggle, menuHeaderTopList, true);});
-// _fnMenuHeaderTop(menuHeaderTopToggle, menuHeaderTopList, true);
+var _fnMenuHeaderTop = function(toggle, list, slide) {
+    var className, el, time;
+    time = 300;
+    el = toggle.closest('.mobile-list-anim');
+    className = 'active';
+
+    if (toggle.prop("checked")) {
+        if(slide) list.stop().slideDown(time);
+        el.add(list).addClass(className);
+    } else {
+        if(slide) list.stop().slideUp(time);
+        el.add(list).removeClass(className);
+    }
+};
+
+var menuHeaderTopToggle = $('#header-bottom-toggleMenuMbl');
+var menuHeaderTopList = $('.header-mobile__popup');
+
+menuHeaderTopToggle.change(function() {_fnMenuHeaderTop(menuHeaderTopToggle, menuHeaderTopList, false);});
+_fnMenuHeaderTop(menuHeaderTopToggle, menuHeaderTopList, false);
+
+$('.header-mobile__popup-toggle').click(function (e) {
+    menuHeaderTopToggle[0].checked = false;
+    menuHeaderTopToggle.change();
+});
+
 // $(document).click(function(e) {
 //     var target;
 //     target = $(e.target);
 //     if ((!target.is(menuHeaderTopList) && !target.closest(menuHeaderTopList)[0]) && (!target.is(menuHeaderTopToggle) && !target.is('.menuTopMobel'))) {
 //         menuHeaderTopToggle[0].checked = false;
-//         _fnMenuHeaderTop(menuHeaderTopToggle, menuHeaderTopList, true);
+//         _fnMenuHeaderTop(menuHeaderTopToggle, menuHeaderTopList, false);
 //     }
 // });
 //
@@ -77,3 +83,32 @@
 //         // }
 //     }
 // };
+
+$('.header-mobile__popup-list').find('a').click(function (e) {
+    var _this = $(this),
+        parent = _this.parent(),
+        list = _this.next('ul'),
+        time = 300;
+
+    if(list[0]){
+        e.preventDefault();
+        list.slideToggle(time);
+        parent.toggleClass('active');
+        parent.siblings().removeClass('active');
+    }
+
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+

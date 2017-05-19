@@ -1,3 +1,112 @@
 .footer{
-
+  background-color: #43464d;
+  padding-top: 39px;
+  color: white;
+  font-size: 13px;
+  font-weight: 400;
+  padding-bottom: 40px;
+  &__logo{
+    display: block;
+  }
+  hr{
+    border-top-color: rgba(255, 255, 255, 0.31);
+    margin: 15px 0;
+  }
+  &__copyright-shop{
+    @include opacity(0.5);
+    color: gainsboro;
+    line-height: 22px;
+  }
+  &__list{
+    display: table;
+    width: 100%;
+    ul{
+      display: table-cell;
+      vertical-align: top;
+      @include nl;
+      font-size: 15px;
+      +ul{
+        padding-left: 10%;
+      }
+      li{
+        display: block;
+        a{
+          display: block;
+          color: inherit;
+          padding: 9px 0;
+        }
+      }
+    }
+    &-title{
+      font-size: 15px;
+      margin-bottom: 5px;
+    }
+    &-sections{
+      display: table;
+      width: 100%;
+      &-section{
+        display: table-cell;
+        vertical-align: top;
+        +*{
+          padding-left: 10%;
+        }
+      }
+    }
+  }
+  &__link-callback{
+    margin: 6px 0;
+    color: inherit;
+    display: block;
+    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.25);
+    position: relative;
+    z-index: 2;
+    >span{
+      border-radius: 4px;
+      border: 3px solid white;
+      display: block;
+      text-align: center;
+      padding: 11px 0;
+    }
+    &:hover{
+      >span{
+        background-color: #92c842;
+        border-color: #92c842;
+      }
+    }
+  }
+  &__contact{
+    line-height: 25px;
+    margin: 6px 0;
+    display: block;
+    b{
+      color: inherit;
+    }
+  }
+  &__copyrightIt{
+    font-size: 0;
+    color: white;
+    display: block;
+    text-align: right;
+    >*{
+      display: inline-block;
+      vertical-align: middle;
+    }
+    &-title{
+      font-size: 13px;
+    }
+    &-label{
+      color: #92c842;
+      font-size: 15px;
+      font-weight: 700;
+      border: 2px solid #92c842;
+      padding: 1px 8px;
+    }
+    &:hover{
+      .footer__copyrightIt-label{
+        background-color: #92c842;
+        color: #fff;
+        text-shadow: 0 2px 3px rgba(0, 0, 0, 0.25);
+      }
+    }
+  }
 }

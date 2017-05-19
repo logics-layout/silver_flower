@@ -36,6 +36,15 @@ a{
   }
 }
 
+.caret{
+  @include triangle('down', currentColor, 6px, 4px);
+}
+.dib{
+  display: inline-block;
+}
+.db{
+  display: block;
+}
 .rub{
   letter-spacing: -12px;
   display: inline-block;
@@ -51,11 +60,10 @@ a{
 
 h1, .h1{
   margin-bottom: 30px;
-  font-size: 50px;
   line-height: normal;
-  color: #4f4f4f;
-  font-family: GothamPro, sans-serif;
   font-weight: 700;
+  color: #43464d;
+  font-size: 40px;
   &:first-child{
     margin-top: 0;
   }
@@ -145,7 +153,6 @@ ol{
 
 b{
   font-weight: 700;
-  color: #292a3c;
 }
 
 .tableWrap{
@@ -398,8 +405,61 @@ table{
   }
 }
 
+.count-block{
+  white-space: nowrap;
+  &__btn{
+    @include btn-clear;
+    display: inline-block;
+    vertical-align: middle;
+    height: 20px;
+    padding: 0 7px;
+    opacity: 0;
+    @include tr;
+    &:after{
+      content: '';
+      display: block;
+    }
+    &_minus{
+      &:after{
+        @include triangle('left', currentColor, 8px, 8px);
+      }
+      &:hover{
+        &:after{
+          @include triangle('left', #92c842, 8px, 8px);
+        }
+      }
+    }
+    &_plus{
+      &:after{
+        @include triangle('right', currentColor, 8px, 8px);
+      }
+      &:hover{
+        &:after{
+          @include triangle('right', #92c842, 8px, 8px);
+        }
+      }
+    }
+  }
+  &__input{
+    text-align: center;
+    width: 60px;
+    height: 20px;
+    border: 1px solid #9f9f9f;
+    border-radius: 4px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  &:hover{
+    .count-block__btn{
+      opacity: 1;
+    }
+  }
+}
 
 
-
+@include text-border-bottom('black', #515b5e);
+@include text-border-bottom('blackTwo', #626262);
+@include text-border-bottom('white', #fff);
+@include text-border-bottom('birch', #e9fff2);
 
 

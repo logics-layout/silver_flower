@@ -1,5 +1,225 @@
 mixin header(data)
-    .header(class!=data).not-styleLink
+    .header-mobile.hidden-lg-up.not-styleLink
+        .header-mobile__table
+            .header-mobile__table-cell.header-mobile__table-cell_btn
+                button.header-mobile__btn.header-mobile__btn_toggle-menu
+                    .mobile-list-anim
+                        input(type="checkbox", id="header-bottom-toggleMenuMbl")
+                        label.menuTopMobel(for="header-bottom-toggleMenuMbl")
+                            span.menu-mobile
+                                span.menu-mobile-hamburger.one
+                                span.menu-mobile-hamburger.two
+                                span.menu-mobile-hamburger.three
+
+
+            .header-mobile__table-cell.text-center
+                a(href='#').header-mobile__phone +7 (905) 456 12 12
+
+            .header-mobile__table-cell.header-mobile__table-cell_btn
+                button.header-mobile__btn: +icon('profile')
+            .header-mobile__table-cell.header-mobile__table-cell_btn
+                button.header-mobile__btn
+                    span.header-mobile__btn-basket-icon: +icon('basket', 'svg-basket', 16, 12)
+                    span.header-mobile__btn-basket-count: b 2
+
+        .header-mobile__popup
+            a(herf='#').header-mobile__popup-toggle
+            .header-mobile__popup-content
+                .header-mobile__popup-list
+                    ul
+                        li.open.active
+                            a(href='#') Каталог товаров
+                                em: +icon('arrow-bottom')
+                            ul
+                                li: a(href="#") Женская одежда
+                                li: a(href="#") Мужская одежда
+                                li: a(href="#") Детская одежда
+                                li: a(href="#") Аксессуары
+                                li: a(href="#") Распродажа
+
+                        li: a(href='#') Акции
+                        li: a(href='#') Системы скидок
+                        li: a(href='#') Доставка
+                        li: a(href='#') Оплата
+                        li: a(href='#') Возврат и обмен
+                        li: a(href='#') Оптовикам
+                        li: a(href='#') Новости
+                        li: a(href='#') О компании
+                        li: a(href='#') Контакты
+
+        a(href="#").header-mobile__logo: +img('assets/header/logo', 'png')
+
+
+    .header(class!=data).not-styleLink.hidden-md-down
+        .header__top
+            .container
+                .header__top-table
+                    .header__top-table-cell
+                        ul.header__menu
+                            li: a(herf="#") Акции
+                            li: a(herf="#") Система скидок
+                            li: a(herf="#") Доставка
+                            li: a(herf="#") Оплата
+                            li: a(herf="#") Возврат и обмен
+                            li: a(herf="#") Оптовикам
+                            li: a(herf="#") Новости
+                            li: a(herf="#") О компании
+                            li: a(herf="#") Контакты
+                    .header__top-table-cell.header__top-table-cell_textRight
+                        .dropdown
+                            a(data-toggle="dropdown").dropdown-toggle.header__profile.color-black
+                                span
+                                    span.header__profile-img(style="background-image: url('%=static=%img/assets/header/profile.png');")
+                                span.header__profile-name
+                                    span.color-black__title.color-black__title_viewBorder: b Евгения Николаева
+                                    |&nbsp;&nbsp;
+                                    span.caret
+
+                            ul.dropdown-menu(role='menu', aria-labelledby='dropdownMenu1')
+                                li(role='presentation')
+                                    a(role='menuitem', tabindex='-1', href='#') Действие
+                                li(role='presentation')
+                                    a(role='menuitem', tabindex='-1', href='#') Другое действие
+                                li(role='presentation')
+                                    a(role='menuitem', tabindex='-1', href='#') Что-то еще
+                                li.divider(role='presentation')
+                                li(role='presentation')
+                                    a(role='menuitem', tabindex='-1', href='#') Отдельная ссылка
+
+
+        .header__center
+            .container
+                .header__center-table
+                    .header__center-table-cell.header__center-table-cell_logo
+                        a(href="#").header__logo: +img('assets/header/logo', 'png')
+                    .header__center-table-cell
+                        .header__sections
+                            .header__sections-section
+                                .header__contacts
+                                    .header__contacts-contact.color-blackTwo
+                                        span.db: b Время работы:
+                                        span.db пн-сб с 9:00 до 21:00
+                            .header__sections-section
+                                .header__contacts
+                                    a(href="#").header__contacts-contact.color-blackTwo
+                                        span.db: b Оптовые продажи:
+                                        span.db: span.color-blackTwo__title +7 (905) 456 12 45
+                                    a(href="#").header__contacts-contact.color-blackTwo
+                                        span.db: b Розничные продажи:
+                                        span.db: span.color-blackTwo__title +7 (905) 456 12 12
+                            .header__sections-section
+                                .header__contacts
+                                    a(href="#").header__contacts-contact.color-blackTwo
+                                        span.header__basket-link
+                                            span
+                                                span.header__basket-link-icon: +icon('basket')
+                                            span
+                                                span.header__basket-link-title #[span.color-blackTwo__title.color-blackTwo__title_viewBorder В корзине] 8 товаров #[br] на сумму #[b 18 200 р.]
+
+                                    button.btn.btn-green СВЯЖИТЕСЬ С НАМИ
+
+        .header__bottom
+            .container
+                .header__bottom-table
+                    .header__bottom-table-cell
+                        .header__category
+                            ul
+                                li.parent: a(href='#')
+                                    b Женская одежда
+                                    .header__category-subMenu
+                                        .header__category-subMenu-left
+                                            .header__category-subMenu-list
+                                                ul
+                                                    li: a(href="#"): span Майки
+                                                    li: a(href="#"): span Футболки
+                                                    li: a(href="#"): span Шорты
+                                                    li: a(href="#"): span Брюки
+                                                    li: a(href="#"): span Кофты
+                                                    li: a(href="#"): span Лонгсливы
+                                                    li: a(href="#"): span Платья
+                                                    li: a(href="#"): span Комплекты
+                                                    li: a(href="#"): span Шапки
+
+                                        .header__category-subMenu-right
+                                            +img('assets/header/category-1')
+
+                                li.parent: a(href='#')
+                                    b Мужская одежда
+                                    .header__category-subMenu
+                                        .header__category-subMenu-left
+                                            .header__category-subMenu-list
+                                                ul
+                                                    li: a(href="#"): span Майки
+                                                    li: a(href="#"): span Футболки
+                                                    li: a(href="#"): span Шорты
+                                                    li: a(href="#"): span Брюки
+                                                    li: a(href="#"): span Кофты
+                                                    li: a(href="#"): span Лонгсливы
+                                                    li: a(href="#"): span Платья
+                                                    li: a(href="#"): span Комплекты
+                                                    li: a(href="#"): span Шапки
+
+                                        .header__category-subMenu-right
+                                            +img('assets/header/category-1')
+                                li.parent: a(href='#')
+                                    b Детская одежда
+                                    .header__category-subMenu
+                                        .header__category-subMenu-left
+                                            .header__category-subMenu-list
+                                                ul
+                                                    li: a(href="#"): span Майки
+                                                    li: a(href="#"): span Футболки
+                                                    li: a(href="#"): span Шорты
+                                                    li: a(href="#"): span Брюки
+                                                    li: a(href="#"): span Кофты
+                                                    li: a(href="#"): span Лонгсливы
+                                                    li: a(href="#"): span Платья
+                                                    li: a(href="#"): span Комплекты
+                                                    li: a(href="#"): span Шапки
+
+                                        .header__category-subMenu-right
+                                            +img('assets/header/category-1')
+                                li.parent: a(href='#')
+                                    b Аксессуары
+                                    .header__category-subMenu
+                                        .header__category-subMenu-left
+                                            .header__category-subMenu-list
+                                                ul
+                                                    li: a(href="#"): span Майки
+                                                    li: a(href="#"): span Футболки
+                                                    li: a(href="#"): span Шорты
+                                                    li: a(href="#"): span Брюки
+                                                    li: a(href="#"): span Кофты
+                                                    li: a(href="#"): span Лонгсливы
+                                                    li: a(href="#"): span Платья
+                                                    li: a(href="#"): span Комплекты
+                                                    li: a(href="#"): span Шапки
+
+                                        .header__category-subMenu-right
+                                            +img('assets/header/category-1')
+                                li: a(href='#'): b Распродажа
+                    .header__bottom-table-cell.text-right
+                        form.header__search
+                            input.header__search-input(placeholder="Поиск по сайту")
+                            button.header__search-btn: +icon('search')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
