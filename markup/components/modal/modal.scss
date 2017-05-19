@@ -40,43 +40,22 @@
   overflow-y: auto;
 }
 
-.modal__table{
-  display: table;
-  width: 100%;
-  >*{
-    display: table-row;
-    +*{
-      >*{
-        padding-top: 20px;
-      }
-    }
-    >*{
-      display: table-cell;
-      vertical-align: middle;
-      +*{
-        padding-left: 15px;
-      }
-    }
-  }
-}
-
 // Shell div to position the modal with bottom padding
 .modal-dialog {
   position: relative;
   width: auto;
-  margin: 10px;
+  margin: 10px -5px;
   .close{
     @include btn-clear;
     position: absolute;
     top: 0;
     right: 0;
-    width: 22px;
-    height: 100%;
     z-index: 9;
-    fill: #b4b4b4;
-    padding-right: 42px;
+    fill: #43464d;
+    padding-top: 15px;
+    padding-right: 20px;
     &:hover{
-      fill: #000;
+      fill: #000000;
     }
     i{
       svg{
@@ -86,6 +65,8 @@
   }
 }
 
+
+
 // Actual modal
 .modal-content {
   position: relative;
@@ -93,8 +74,7 @@
   //border: 1px solid $modal-content-fallback-border-color; //old browsers fallback (ie8 etc)
   //border: 1px solid $modal-content-border-color;
   //border-radius: $border-radius-large;
-  //@include box-shadow(0 3px 9px rgba(0,0,0,.5));
-  box-shadow: 0 35px 40px rgba(0, 92, 86, 0.15);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
   background-clip: padding-box;
   // Remove focus outline from opened modal
   outline: 0;
@@ -143,23 +123,19 @@
 // Title text within header
 .modal-title {
   margin: 0;
-  //line-height: $modal-title-line-height;
-  //text-align: center;
-  font-size: 26px;
   line-height: 28px;
-  font-weight: 600;
-  color: #010302;
-  font-family: Neris, sans-serif;
+  color: #43464d;
+  font-size: 27px;
+  font-weight: 400;
+  margin-bottom: 11px;
+}
 
-  margin-bottom: 17px;
-  &.small{
-    font-size: 20px;
-    line-height: 30px;
-  }
-  &-sub{
-    font-weight: 300;
-    text-align: center;
-  }
+.modal-titleSub {
+  color: #969696;
+  font-size: 12px;
+  line-height: 18px;
+  margin: 0;
+  margin-bottom: 20px;
 }
 
 // Modal body
@@ -212,16 +188,18 @@
     width: $modal-md;
     margin: 30px auto;
   }
-  .modal-content {
-    box-shadow: 0 35px 40px rgba(0, 92, 86, 0.15);
-  }
   .modal-title {
-    font-size: 32px;
-    line-height: 36px;
+    font-size: 30px;
+    line-height: 28px;
   }
 
   .modal-body {
     padding: 39px 60px;
+  }
+
+  .modal-titleSub{
+    font-size: 13px;
+    line-height: 22px;
   }
 
   .well-title{
@@ -231,6 +209,13 @@
     font-size: 18px;
     line-height: 24px;
     margin-bottom: 35px;
+  }
+
+  .modal-dialog {
+    .close {
+      padding-right: 40px;
+      padding-top: 42px;
+    }
   }
 
   // Modal sizes

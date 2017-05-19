@@ -6,6 +6,18 @@ body, html{
 }
 
 @include my-media-query(max, map_get($grid-breakpoints, xl) - 1) {
+  .cart-result-data{
+    padding-right: 23px;
+    padding-left: 23px;
+    &__price {
+      font-size: 25px;
+    }
+    &__textBig{
+      color: #888;
+      font-size: 17px;
+      line-height: 20px;
+    }
+  }
   .footer {
     &__copyrightIt {
       text-align: center;
@@ -178,6 +190,36 @@ body, html{
 }
 
 @include my-media-query(max, map_get($grid-breakpoints, md) - 1) {
+  .collapse {
+    &__item {
+      +*{
+        margin-top: 12px;
+      }
+      &-head {
+        font-size: 14px;
+        padding: 15px 15px;
+        &:after{
+          right: 17px;
+        }
+        &-table{
+          >*{
+            +*{
+              padding-left: 13px;
+            }
+          }
+        }
+        &-num{
+          width: 28px;
+          height: 28px;
+          line-height: 24px;
+        }
+      }
+      &-content{
+        padding-top: 20px;
+      }
+    }
+  }
+
   .subscription {
     padding-left: 30px;
     &:after {

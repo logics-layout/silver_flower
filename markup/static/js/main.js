@@ -184,36 +184,19 @@ if ($.fn.magnificPopup) {
 // });
 
 
-// $('.collapse').find('.collapse-toggle').click(function(e){
-//     e.preventDefault();
-//     var _this = $(this),
-//         content = _this.next(),
-//         parentContent = _this.closest('.collapse-toggle-content')[0]?_this.closest('.collapse-toggle-content'):_this.closest('.collapse'),
-//         time = 300,
-//         className = 'active';
-//
-//     if(content.hasClass('collapse-toggle-content')){
-//         content.slideToggle(time);
-//         _this.parent().toggleClass(className);
-//
-//         parentContent.find('.collapse-toggle-content').not(content).stop().slideUp(time);
-//         parentContent.find('.collapse-toggle').not(_this).parent().removeClass(className);
-//     }
-// });
+$('.collapse').find('.collapse__item-head').click(function(e){
+    e.preventDefault();
+    var _this = $(this),
+        content = _this.next(),
+        parentContent = _this.closest('.collapse'),
+        time = 300,
+        className = 'active';
 
+    content.slideToggle(time);
+    _this.parent().toggleClass(className);
 
-// var videoBlock = $('.videoBlock'),
-//     videoBlockLabel = $('.videoBlock__label'),
-//     videoBlockIframe = $('.videoBlock__main-iframe');
-//
-// videoBlockLabel.click(function(){
-//     var _this = $(this);
-//
-//     _this.addClass('active').siblings().removeClass('active');
-//     var iframe = _this.find('iframe');
-//     if(iframe[0]){
-//         videoBlockIframe.attr('src', iframe.attr('src'));
-//     }
-// });
+    parentContent.find('.collapse__item-content').not(content).stop().slideUp(time);
+    parentContent.find('.collapse__item-head').not(_this).parent().removeClass(className);
+});
 
-
+$('.modal-show').modal('show');

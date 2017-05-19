@@ -2,43 +2,42 @@ mixin modal()
     #callback(class="modal fade")
         .modal-dialog.modal-md
             .modal-content
-                .modal-header.modal-padding
-                    p.modal-header__title Узнать цену
-                    //button(type="button", class="close", data-dismiss="modal", aria-hidden="true"): +icon('clear')
-                .modal-body.modal-padding
-                    .row: .col-xs-11
-                        #callback-form
-                            .modal__table
-                                .modal__table-row
-                                    div.modal__table-col
-                                        span Ваша заявка
-                                    div.modal__table-col
-                                        input.form-control(placeholder="Экскаватор TVEX 180W")
-                                .modal__table-row
-                                    div.modal__table-col
-                                        span Ваш город
-                                    div.modal__table-col
-                                        input.form-control(placeholder="")
-                                .modal__table-row
-                                    div.modal__table-col
-                                        span Приобретение в лизинг
-                                    div.modal__table-col
-                                        input.form-control(placeholder="")
-                                .modal__table-row
-                                    div.modal__table-col
-                                        span Ф.И.О
-                                    div.modal__table-col
-                                        input.form-control(placeholder="")
-                                .modal__table-row
-                                    div.modal__table-col
-                                        span Эл. почта
-                                    div.modal__table-col
-                                        input.form-control(placeholder="")
-                                .modal__table-row
-                                    div.modal__table-col
-                                        span Телефон
-                                    div.modal__table-col
-                                        input.form-control(placeholder="")
-                            br
-                            .text-center: button.btn.btn-orange.btn-ttu Отправить заявку
+                .modal-body
+                    button(type="button", class="close", data-dismiss="modal", aria-hidden="true"): +icon('clear')
+                    .text-center
+                        p.modal-title Связаться с нами
+                        p.modal-titleSub Заполните форму и наши менеджеры свяжуться с вами в ближайшее время
+
+                    .row
+                        .col-lg-4
+                            .form-group.required.required_yes
+                                input.form-control(placeholder="Как к вам обращаться?")
+                        .col-lg-4
+                            .form-group.required
+                                input.form-control(placeholder="Ваш номер телефона")
+                        .col-lg-4
+                            .form-group
+                                input.form-control(placeholder="Укажите вашу эл. почту")
+                    br
+                    .row
+                        .col-lg-4
+                        .col-lg-4.text-center
+                            button.btn.btn-green.ttu.btn-md.btn-width(disabled) СВЯЖИТЕСЬ С НАМИ
+                        .col-lg-4
+                            br.hidden-lg-up
+                            span.desc-required #[span.desc-required__nowrap &nbsp;#[span.desc-required__icon *] —&nbsp;&nbsp;] #[span обязательные для заполнения поля]
+
+
+    #callback-yes(class="modal fade").modal-show
+        .modal-dialog.modal-sm
+            .modal-content
+                .modal-body
+                    button(type="button", class="close", data-dismiss="modal", aria-hidden="true"): +icon('clear')
+                    .text-center
+                        p.modal-title Спасибо за заявку
+                        p.modal-titleSub Наши менеджеры свяжуться с вами в ближайшее время
+
+                    .text-center
+                        button.btn.btn-green.ttu.btn-md СВЯЖИТЕСЬ С НАМИ
+
 

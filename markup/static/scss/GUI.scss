@@ -46,6 +46,9 @@ a{
 .db{
   display: block;
 }
+.ttu{
+  text-transform: uppercase;
+}
 
 .text-big{
   font-size: 14px;
@@ -482,6 +485,57 @@ table{
   }
   &__btn{
     width: 175px;
+  }
+}
+
+.style-radio{
+  display: inline-block;
+  cursor: pointer;
+  color: #43464d;
+  line-height: 20px;
+  &__input{
+    display: none;
+    &:checked ~ .style-radio__titles{
+      .style-radio__titles-el {
+        &:after {
+          opacity: 1;
+        }
+      }
+    }
+  }
+  &__titles{
+    display: table;
+    >*{
+      display: table-cell;
+      vertical-align: middle;
+      +*{
+        padding-left: 17px;
+      }
+    }
+    &-el{
+      width: 20px;
+      height: 20px;
+      border: 1px solid #43464d;
+      border-radius: 50%;
+      display: inline-block;
+      vertical-align: middle;
+      position: relative;
+      &:after{
+        content: '';
+        display: block;
+        width: 14px;
+        height: 14px;
+        background-color: #92c842;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -7px;
+        margin-left: -7px;
+        opacity: 0;
+        @include tr;
+      }
+    }
   }
 }
 
