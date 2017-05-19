@@ -5,10 +5,23 @@ $(document).on('click', '[href="#"]', function(e) {
 // linkTop.click(function () {
 //     $('html, body').animate({ scrollTop: 0 }, 500);
 // });
+
+
+function heightBlockContainer() {
+    $('.block-container').each(function(){
+        var _this = $(this),
+            content = _this.find('.block-container__content'),
+            size = _this.find('.block-container__size');
+        size.height(content[0].clientHeight);
+    });
+}
+heightBlockContainer();
 $(window).on({
     load: function () {
         checkFooterHeight();
         // checkHeaderFix();
+        heightBlockContainer();
+
     },
     scroll: function () {
         // var scrollTop = $(window).scrollTop();
@@ -20,6 +33,7 @@ $(window).on({
         // checkHeaderFix();
     },
     resize: function () {
+        heightBlockContainer();
         // checkHeaderFix();
         checkFooterHeight();
     }
@@ -201,3 +215,5 @@ if ($.fn.magnificPopup) {
 //         videoBlockIframe.attr('src', iframe.attr('src'));
 //     }
 // });
+
+

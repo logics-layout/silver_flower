@@ -41,10 +41,16 @@ a{
 }
 .dib{
   display: inline-block;
+  vertical-align: middle;
 }
 .db{
   display: block;
 }
+
+.text-big{
+  font-size: 14px;
+}
+
 .rub{
   letter-spacing: -12px;
   display: inline-block;
@@ -69,9 +75,9 @@ h1, .h1{
   }
 }
 h2, .h2{
-  color: #0b6ab3;
+  color: #43464d;
   font-size: 30px;
-  font-weight: 600;
+  font-weight: 700;
   line-height: normal;
   margin-bottom: 25px;
   margin-top: 25px;
@@ -96,11 +102,8 @@ p {
 }
 
 hr{
-  border-color: #f0f1f2;
-  margin: 55px 0;
-  &.two{
-    margin: 25px 0;
-  }
+  border-top-color: #cdcdcd;
+  margin: 40px 0;
 }
 
 ol, ul{
@@ -108,20 +111,20 @@ ol, ul{
   padding: 0;
   li{
     position: relative;
-    padding-left: 32px;
+    padding-left: 34px;
     &:after{
       content: '';
       display: block;
-      width: 10px;
-      height: 10px;
-      background-color: #ef9c00;
+      width: 11px;
+      height: 11px;
+      background-color: #92c842;
       position: absolute;
       left: 0;
       top: 7px;
-      line-height: 20px;
+      line-height: 16px;
       color: #fff;
-      font-size: 15px;
-      font-weight: 400;
+      font-size: 13px;
+      font-weight: 700;
       text-align: center;
     }
   }
@@ -129,7 +132,6 @@ ol, ul{
 ol{
   li {
     counter-increment: li;
-    padding-left: 37px;
     &:after {
       content: counter(li);
       width: 16px;
@@ -456,10 +458,36 @@ table{
   }
 }
 
+.block-price-view{
+  display: table;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 10px 10px rgba(80, 80, 80, 0.2);
+  width: 100%;
+  padding: 16px 14px;
+  padding-left: 24px;
+  >*{
+    display: table-cell;
+    vertical-align: middle;
+  }
+  &__title{
+    color: #888;
+    font-size: 20px;
+    line-height: 22px;
+  }
+  &__price{
+    color: #43464d;
+    font-size: 30px;
+    line-height: normal;
+  }
+  &__btn{
+    width: 175px;
+  }
+}
+
 
 @include text-border-bottom('black', #515b5e);
 @include text-border-bottom('blackTwo', #626262);
+@include text-border-bottom('blackThree', #43464d);
 @include text-border-bottom('white', #fff);
 @include text-border-bottom('birch', #e9fff2);
-
-

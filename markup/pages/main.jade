@@ -22,17 +22,22 @@ html(class="no-js", lang="ru")
         section.page__wrapper
             +header(index)
             -if(!breadcrumb)
-                .container
-                    br
-                    br
-                    ul.breadcrumb.not-styleLink
-                        li: a(href="#"): span Главная
-                        li: span О компании
+                .breadcrumbBlock
+                    .container
+                        ul.breadcrumb.not-styleLink
+                            li: a(href="#"): span Главная
+                            li: span О компании
 
-            //- Include your components here
-            //- start block content
-            block content
-            //- end block content
+                        - if(headData)
+                            h1.breadcrumbBlock__title=headData.title
+                        - else
+                            h1.breadcrumbBlock__title= head.defaults.title
+
+            .container
+                //- Include your components here
+                // start block content
+                block content
+                // end block content
 
 
             .page__buffer

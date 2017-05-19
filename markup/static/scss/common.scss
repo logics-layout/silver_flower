@@ -12,7 +12,7 @@ html, body {
 
 .page__wrapper {
   min-height: 100%;
-  padding-bottom: 85px;
+  padding-bottom: 76px;
 
 }
 * html .page__wrapper {
@@ -42,6 +42,16 @@ html, body {
       margin-bottom: 10px;
     }
   }
+  &__clear{
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: -6px;
+    svg{
+      display: block;
+      fill: #b3b3b3;
+    }
+  }
   &__table{
     width: 100%;
     display: table;
@@ -54,6 +64,7 @@ html, body {
       display: table-cell;
       vertical-align: middle;
       padding: 26px 28px;
+      position: relative;
       &_head{
         background-color: #92c842;
         color: #fff;
@@ -62,6 +73,10 @@ html, body {
       }
       &_img{
         width: 20px;
+      }
+      &_title{
+        width: 290px;
+        text-align: left;
       }
     }
     &-head{
@@ -97,3 +112,133 @@ html, body {
     }
   }
 }
+
+.block-container{
+  &:last-child{
+    margin-bottom: -76px;
+  }
+  &__content{
+    width: 100%;
+    left: 0;
+    position: absolute;
+    padding: 40px 0;
+    &_white{
+      background-color: #fff;
+    }
+  }
+}
+
+.breadcrumbBlock{
+  padding: 40px 0;
+  &__title{
+    margin: 0 !important;
+  }
+}
+
+.banner-inner{
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  padding: 57px 67px;
+  &__title{
+    font-size: 30px;
+    font-weight: 700;
+    margin: 0;
+    margin-bottom: 30px;
+  }
+  &__text{
+    margin-bottom: 45px;
+  }
+}
+
+.subscription{
+  background-color: white;
+  border: 2px solid #43464d;
+  border-radius: 4px;
+  position: relative;
+  margin: 50px 0;
+  padding: 41px 0;
+  padding-left: 134px;
+  padding-right: 38px;
+  display: table;
+  width: 100%;
+  >*{
+    display: table-cell;
+    vertical-align: middle;
+    +*{
+      padding-left: 20px;
+    }
+  }
+  &:after{
+    content: '';
+    display: block;
+    @include bg($subscription);
+    position: absolute;
+    top: 50%;
+    left: -30px;
+    margin-top: -41px;
+  }
+  &__title{
+    color: #43464d;
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 27px;
+  }
+  &__form{
+    position: relative;
+    width: 500px;
+    &-input{
+      outline: none;
+      height: 40px;
+      border: 1px solid #43464d;
+      border-radius: 4px;
+      padding-left: 21px;
+      padding-right: 160px;
+      width: 100%;
+      color: #43464d;
+      font-size: 13px;
+      font-weight: 400;
+      @include placeholder(#43464d);
+    }
+    &-btn{
+      position: absolute;
+      right: 0;
+      top: 50%;
+      margin-top: -20px;
+      padding: 11px 23px;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

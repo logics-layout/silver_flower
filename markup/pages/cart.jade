@@ -6,38 +6,57 @@ block head
     link(href="%=static=%css/separate-css/slick.css", rel="stylesheet", type="text/css")
 
 block content
-    .container
-        h1 Корзина товаров
-        .cart
-            .cart__content.not-styleLink
-                .cart__table
-                    .cart__table-head
-                        .cart__table-row
-                            .cart__table-cell.cart__table-cell_head: b Фото
-                            .cart__table-cell.cart__table-cell_head: b Наименование
-                            .cart__table-cell.cart__table-cell_head: b Вес
-                            .cart__table-cell.cart__table-cell_head: b Цена
-                            .cart__table-cell.cart__table-cell_head: b Количество
-                            .cart__table-cell.cart__table-cell_head: b Сумма
-                            .cart__table-cell.cart__table-cell_head
-                    .cart__table-body
-                        -for(var i = 0; i<3; i++)
-                            .cart__table-row
-                                .cart__table-cell.cart__table-cell_img
-                                    a(href="#").cart__img: span: +img('content/cart/1')
-                                .cart__table-cell
-                                    p: b Футболка кмф "Мультикам" #[br](мод.ФК-16)
-                                    span Артикул: 456789123
-                                .cart__table-cell 0,7 кг
-                                .cart__table-cell 1 275 р.
-                                .cart__table-cell
-                                    .count-block
-                                        button.count-block__btn.count-block__btn_minus
-                                        input(value=(1+i)).count-block__input
-                                        button.count-block__btn.count-block__btn_plus
-                                .cart__table-cell: b.cart__content-textBig 4 200 р.
-                                .cart__table-cell: a(href="#").color-blackTwo: span.color-blackTwo__title.color-blackTwo__title_dashed.color-blackTwo__title_viewBorder Удалить
+    .cart
+        .cart__content.not-styleLink
+            .cart__table
+                .cart__table-head
+                    .cart__table-row
+                        .cart__table-cell.cart__table-cell_head: b Фото
+                        .cart__table-cell.cart__table-cell_head: b Наименование
+                        .cart__table-cell.cart__table-cell_head: b Вес
+                        .cart__table-cell.cart__table-cell_head: b Цена
+                        .cart__table-cell.cart__table-cell_head: b Количество
+                        .cart__table-cell.cart__table-cell_head: b Сумма
+                        .cart__table-cell.cart__table-cell_head
 
+                .cart__table-body
+                    -for(var i = 0; i<3; i++)
+                        .cart__table-row
+                            .cart__table-cell.cart__table-cell_img
+                                a(href="#").cart__img: span: +img('content/cart/1')
+                            .cart__table-cell.cart__table-cell_title
+                                p: b Футболка кмф "Мультикам" (мод.ФК-16)
+                                span Артикул: 456789123
+                                a(href="#").cart__clear.hidden-lg-up: +icon('clear')
+                            .cart__table-cell.cart__table-cell_titleEl
+                                span.db.hidden-lg-up: b Вес
+                                span 0,7 кг
+                            .cart__table-cell.cart__table-cell_titleEl
+                                span.db.hidden-lg-up: b Цена
+                                span 1 275 р.
+                            .cart__table-cell.cart__table-cell_titleEl
+                                span.db.hidden-lg-up: b Количество
+                                .count-block
+                                    button.count-block__btn.count-block__btn_minus
+                                    input(value=(1+i)).count-block__input
+                                    button.count-block__btn.count-block__btn_plus
+                            .cart__table-cell.cart__table-cell_titleEl
+                                span.db.hidden-lg-up: b Сумма
+                                b.cart__content-textBig 4 200 р.
+                            .cart__table-cell.cart__table-cell__titleEl
+                                a(href="#").hidden-md-down.color-blackTwo: span.color-blackTwo__title.color-blackTwo__title_dashed.color-blackTwo__title_viewBorder Удалить
+    br
+    br
+    .row
+        .col-xl-7.col-lg-6.col-md-4
+        .col-xl-5.col-lg-6.col-md-8
+            span.text-big: b #[span.dib Общий вес: 3 кг] #[span &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] #[span.dib Товаров на сумму: 12 280 р.]
+            br
+            br
+            .block-price-view
+                .block-price-view__title: b Итого:
+                .block-price-view__price: b 12 280 р.
+                .block-price-view__btn: button.btn.btn-green.btn-width ОФОРМИТЬ ЗАКАЗ
 
 
 
