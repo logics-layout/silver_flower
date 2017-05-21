@@ -1,0 +1,194 @@
+extends main
+
+block head
+    - var headData = {title: "Футболка мужская белая"}
+
+    link(href="%=static=%css/separate-css/slick.css", rel="stylesheet", type="text/css")
+
+block content
+    .row
+        .col-lg-5
+            .slider
+                .slider__view.not-styleLink
+                    .slider__view-list.magnificPopup
+                        a.slider__view-list-section.zoom(href="https://img1.wbstatic.net/big/new/3950000/3952697-1.jpg", data-img="https://img1.wbstatic.net/big/new/3950000/3952697-1.jpg"): img(src="https://img1.wbstatic.net/big/new/3950000/3952697-1.jpg")
+                        a.slider__view-list-section.zoom(href="https://img1.wbstatic.net/big/new/3950000/3952697-2.jpg", data-img="https://img1.wbstatic.net/big/new/3950000/3952697-2.jpg"): img(src="https://img1.wbstatic.net/big/new/3950000/3952697-2.jpg")
+                        a.slider__view-list-section.zoom(href="https://img1.wbstatic.net/big/new/3950000/3952697-3.jpg", data-img="https://img1.wbstatic.net/big/new/3950000/3952697-3.jpg"): img(src="https://img1.wbstatic.net/big/new/3950000/3952697-3.jpg")
+                        a.slider__view-list-section.zoom(href="https://img2.wbstatic.net/big/new/3950000/3952698-1.jpg", data-img="https://img2.wbstatic.net/big/new/3950000/3952698-1.jpg"): img(src="https://img2.wbstatic.net/big/new/3950000/3952698-1.jpg")
+                        a.slider__view-list-section.zoom(href="https://img2.wbstatic.net/big/new/3950000/3952698-2.jpg", data-img="https://img2.wbstatic.net/big/new/3950000/3952698-2.jpg"): img(src="https://img2.wbstatic.net/big/new/3950000/3952698-2.jpg")
+                        a.slider__view-list-section.zoom(href="https://img2.wbstatic.net/big/new/3950000/3952698-3.jpg", data-img="https://img2.wbstatic.net/big/new/3950000/3952698-3.jpg"): img(src="https://img2.wbstatic.net/big/new/3950000/3952698-3.jpg")
+
+                    .slider__view-top
+                        span.dib Артикул: 4567894445
+                    .slider__view-stickers
+                        span.db.item__sticker(style="fill:#de3a45")
+                            span.db.item__sticker-icon: +icon('stiker')
+                            span.db.item__sticker-title -20%
+
+
+                div(style="overflow: hidden;")
+                    .slider__preview
+                        .slider__preview-section: img(src='https://img1.wbstatic.net/big/new/3950000/3952697-1.jpg')
+                        .slider__preview-section: img(src='https://img1.wbstatic.net/big/new/3950000/3952697-2.jpg')
+                        .slider__preview-section: img(src='https://img1.wbstatic.net/big/new/3950000/3952697-3.jpg')
+                        .slider__preview-section: img(src='https://img2.wbstatic.net/big/new/3950000/3952698-1.jpg')
+                        .slider__preview-section: img(src='https://img2.wbstatic.net/big/new/3950000/3952698-2.jpg')
+                        .slider__preview-section: img(src='https://img2.wbstatic.net/big/new/3950000/3952698-3.jpg')
+
+            br
+            p.h2(style="margin-bottom: 9px;") Описание
+            .row: .col-lg-11
+                .detail-item__table.color-greyTwo
+                    .detail-item__table-row
+                        .detail-item__table-cell: b Категория товара
+                        .detail-item__table-cell Склад
+                    .detail-item__table-row
+                        .detail-item__table-cell: b Пол
+                        .detail-item__table-cell мужской
+                    .detail-item__table-row
+                        .detail-item__table-cell: b Сезон
+                        .detail-item__table-cell Лето
+                    .detail-item__table-row
+                        .detail-item__table-cell: b Основной цвет
+                        .detail-item__table-cell Серый
+                    .detail-item__table-row
+                        .detail-item__table-cell: b Цвет
+                        .detail-item__table-cell Серый
+                    .detail-item__table-row
+                        .detail-item__table-cell: b Материал
+                        .detail-item__table-cell Смесовая, пл. 210г/м2
+                    .detail-item__table-row
+                        .detail-item__table-cell: b Застёжка
+                        .detail-item__table-cell Молния
+                    .detail-item__table-row
+                        .detail-item__table-cell: b Страна
+                        .detail-item__table-cell Россия
+            br
+
+        .col-lg-7
+            .detail-item__sections.detail-item__sections_big
+                .detail-item__sections-section.text-big
+                    span.db(style="margin-bottom: 7px;"): b Оптовая цена:
+                    span.detail-item__price-through 1 500 р.
+                    span.dib &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    span.detail-item__price 1 280 р.
+                .detail-item__sections-section.text-big
+                    span.db(style="margin-bottom: 7px;"): b Розничная цена:
+                    span.detail-item__price 1 400 р.
+
+
+            .detail-item__sections.not-styleLink
+                .detail-item__sections-section.text-big
+                    a(href="#").color-blackThree: span.color-blackThree__title.color-blackThree__title_dashed.color-blackThree__title_viewBorder Оптовые скидки
+                .detail-item__sections-section.text-big
+                    a(href="#").color-blackThree: span.color-blackThree__title.color-blackThree__title_dashed.color-blackThree__title_viewBorder Оптовая доставка
+                .detail-item__sections-section.text-big
+                    a(href="#").color-blackThree: span.color-blackThree__title.color-blackThree__title_dashed.color-blackThree__title_viewBorder Оптовый прайс-лист
+
+            hr.two
+            span.db.text-big.color-greyTwo.detail-item__titleSmall: b Выберите размер и количество:
+            .row: .col-lg-8
+                .detail-item__list-properties
+                    .detail-item__list-properties-row
+                        .detail-item__list-properties-cell.detail-item__list-properties-cell_head.text-big: b Размер:
+                        .detail-item__list-properties-cell.detail-item__list-properties-cell_head.text-big: b Рост:
+                        .detail-item__list-properties-cell.detail-item__list-properties-cell_head
+                        .detail-item__list-properties-cell.detail-item__list-properties-cell_head
+                    -for(var i=0;i<5;i++)
+                        .detail-item__list-properties-row
+                            .detail-item__list-properties-cell 44-46
+                            .detail-item__list-properties-cell 170-176
+                            .detail-item__list-properties-cell: span.detail-item__count 1
+                            .detail-item__list-properties-cell шт. в наличии
+                    -for(var i=0;i<5;i++)
+                        .detail-item__list-properties-row
+                            .detail-item__list-properties-cell 44-46
+                            .detail-item__list-properties-cell 170-176
+                            .detail-item__list-properties-cell: span.detail-item__count
+                            .detail-item__list-properties-cell заказать товар
+
+            hr.two
+            span.db.text-big.color-greyTwo.detail-item__titleSmall: b Доставка:
+            .detail-item__shipping-list
+                .detail-item__shipping-list-section
+                    ul: li Самовывоз
+                .detail-item__shipping-list-section
+                    ul: li Доставка курьером
+                .detail-item__shipping-list-section
+                    ul: li Доставка транспортной компанией
+            br
+            .detail-item__list-btns
+                .detail-item__list-btns-section
+                    button.btn.btn-green.btn-border.btn-sm ВОЗНИКЛИ ВОПРОСЫ?
+                .detail-item__list-btns-section
+                    button.btn.btn-green.btn-border.btn-sm СВЯЗАТЬСЯ С МЕНЕДЖЕРОМ
+            br
+            .row: .col-lg-11
+                .block-price-view.detail-item__block-price-view
+                    .block-price-view__title: b Заказ на сумму:
+                    .block-price-view__price: b 12 280 р.
+                    .block-price-view__btn: button.btn.btn-green.btn-width КУПИТЬ ТОВАР
+
+            br
+            p Минимальная общая сумма интернет-заказа 1000 р. #[br] Покупка самовывозом из магазина без интернет-заказа — от любой суммы без ограничений
+            hr.two
+            span.db.text-big.color-greyTwo.detail-item__titleSmall: b Возврат товара:
+            p Возврат товара возможен в течении 7 дней. #[br] При возврате товара покупатель оплачивает полную стоимость обратной пересылки
+
+    br
+    br
+    .block-container
+        .block-container__content.block-container__content_white
+            .container
+                h2 СЕО-текст
+                .row: .col-lg-9
+                    p При выборе одежды представители сильной половины человечества в первую очередь ориентируются на удобство. По этой причине трикотаж пользуется большим спросом у мужчин. Эластичные изделия из мягкой пряжи и хлопковой ткани отличаются комфортом в носке. Изделия мужского трикотажа, практичны и долговечны, не сковывают движения.
+                    p Мы изготавливаем трикотаж согласно требованиям ГОСТ в соответствии с требованиями к спецодежде. Именно поэтому наши футболки, свитера, тельняшки, костюмы, которые продаются оптом и в розницу, отличаются устойчивостью к истиранию, долговечностью и высокими эксплуатационными свойствами. При этом цена нашей мужской одежды оптом вполне доступна.
+                    p Изделия из трикотажа камуфляжной расцветки пользуются особым спросом. Ведь такая одежда в стиле милитари подойдут не только военным, рыбакам, охотникам или охранникам. Мужской текстиль оптом дополнит гардероб любителей активного отдыха и экстремальных видов спорта. Такие изделия будут уместны и в повседневной жизни.
+                .subscription
+                    .subscription__title Подписывайтесь на рассылку
+                    .subscription__form
+                        input(placeholder="Введите вашу эл. почту").subscription__form-input
+                        button.btn.btn-green.subscription__form-btn ПОДПИСАТЬСЯ
+        .block-container__size
+
+block script
+    script(src="%=static=%js/separate-js/slick.min.js" type="text/javascript")
+    script(src="%=static=%js/separate-js/jquery.magnific-popup.min.js" type="text/javascript")
+    script(src="%=static=%js/separate-js/jquery.zoom.min.js" type="text/javascript")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

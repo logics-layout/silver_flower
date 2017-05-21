@@ -304,11 +304,25 @@
       }
     }
   }
+  &__slider{
+    &-section{
+      padding: 93px 0;
+    }
+  }
 }
 
 .header-mobile{
-  background-color: #43464d;
-  color: #fff;
+  padding-top: 60px;
+  position: relative;
+  z-index: 9;
+  &-fix{
+    background-color: #43464d;
+    color: #fff;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
   &__phone{
     display: block;
     line-height: 60px;
@@ -321,7 +335,9 @@
     &-cell{
       display: table-cell;
       vertical-align: middle;
-      border-left: 1px solid #fff;
+      +*{
+        border-left: 1px solid #fff;
+      }
       &_btn{
         width: 61px;
       }
@@ -378,6 +394,7 @@
     @include tr;
     opacity: 0;
     visibility: hidden;
+    overflow: hidden;
     &.active{
       opacity: 1;
       visibility: visible;
@@ -402,7 +419,7 @@
       z-index: 2;
       left: 100%;
       @include tr;
-      //max-height: 100vh;overflow: auto;
+      max-height: 100vh;overflow: auto;
     }
     &-list{
       ul{

@@ -1,5 +1,7 @@
 extends main
 
+include ../components/item/item
+
 block head
     - var headData = {title: "Главная"}
     - var breadcrumb = true
@@ -8,8 +10,207 @@ block head
     link(href="%=static=%css/separate-css/slick.css", rel="stylesheet", type="text/css")
 
 block content
+    br
+    br
+    .title-table
+        .title-table__cell
+            h1 Каталог товаров
+        .title-table__cell.text-right.hidden-md-down
+            a(href="#").color-blue.not-styleLink: span.color-blue__title.color-blue__title_dashed.color-blue__title_viewBorder Скачать прайс-лист
+            | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            a(href="#").color-blue.not-styleLink: span.color-blue__title.color-blue__title_dashed.color-blue__title_viewBorder Скачать каталог
+
+    br
+    br
+    .sections.not-styleLink
+        .sections__section
+            a(href="#").sections__item
+                .sections__item-top
+                    span.sections__item-label: b Майки
+                .sections__item-img: +img('content/sections/1', 'png')
+        .sections__section
+            a(href="#").sections__item
+                .sections__item-top
+                    span.sections__item-label: b Футболки
+                .sections__item-img: +img('content/sections/2', 'png')
+        .sections__section
+            a(href="#").sections__item
+                .sections__item-top
+                    span.sections__item-label: b Шорты
+                .sections__item-img: +img('content/sections/3', 'png')
+        .sections__section
+            a(href="#").sections__item
+                .sections__item-top
+                    span.sections__item-label: b Брюки
+                .sections__item-img: +img('content/sections/4', 'png')
+        .sections__section
+            a(href="#").sections__item
+                .sections__item-top
+                    span.sections__item-label: b Кофты
+                .sections__item-img: +img('content/sections/5', 'png')
+        .sections__section
+            a(href="#").sections__item
+                .sections__item-top
+                    span.sections__item-label: b Лонгсливы
+                .sections__item-img: +img('content/sections/6', 'png')
+        .sections__section
+            a(href="#").sections__item
+                .sections__item-top
+                    span.sections__item-label: b Платья
+                .sections__item-img: +img('content/sections/7', 'png')
+        .sections__section
+            a(href="#").sections__item
+                .sections__item-top
+                    span.sections__item-label: b Комплекты
+                .sections__item-img: +img('content/sections/8', 'png')
+        .sections__section
+            a(href="#").sections__item
+                .sections__item-top
+                    span.sections__item-label: b Шапки
+                .sections__item-img: +img('content/sections/9', 'png')
+    br
+    br
+    .text-center
+        button.btn.btn-green ПЕРЕЙТИ В КАТАЛОГ ТОВАРОВ
+
+    .block-container
+        .block-container__content(style="padding: 0;"): hr
+        .block-container__size
+
+    .tabs-labels
+        ul.tabs-labels__list.not-styleLink
+            li.active: a(href="#tabs-labels-1") Новые поступления
+            li: a(href="#tabs-labels-2") Популярные товары
+            li: a(href="#tabs-labels-3") Распродажа
+        br
+        br
+        .tabs-labels__content
+            .tabs-labels__content-item.active#tabs-labels-1
+
+                .itemListSlider.slick-arrow-style
+                    -for(var i=0;i<9;i++)
+                        .itemListSlider__section
+                            +item(i)
+
+                br
+                .text-center
+                    a(href="#").not-styleLink: span.btn.btn-green.ttu Перейти в раздел
+            .tabs-labels__content-item#tabs-labels-2
+
+                .itemListSlider.slick-arrow-style
+                    -for(var i=0;i<9;i++)
+                        .itemListSlider__section
+                            +item(i)
+
+                br
+                .text-center
+                    a(href="#").not-styleLink: span.btn.btn-green.ttu Перейти в раздел
+            .tabs-labels__content-item#tabs-labels-3
+
+                .itemListSlider.slick-arrow-style
+                    -for(var i=0;i<9;i++)
+                        .itemListSlider__section
+                            +item(i)
+
+                br
+                .text-center
+                    a(href="#").not-styleLink: span.btn.btn-green.ttu Перейти в раздел
+
+    br
+    br
+    .banners-table
+        a(href="#", style="background-image: url('%=static=%img/content/banner.png');").banner-stock.not-styleLink
+            span.db.banner-stock__label: b Акция
+            span.db.banner-stock__title Распродажа #[br] старой коллекции!
+            .row: .col-lg-8
+                span.db.banner-stock__text Равным образом консультация с широким активом требуют определения и уточнения соответствующий условий активизации.
+            span.db.banner-stock__link.ttu.color-white: b #[span.color-white__title.color-white__title_viewBorder Узнать подробности акции] &nbsp;>
+        .banners-table__retreat.hidden-md-down
+        .banner-download.not-styleLink.hidden-md-down
+            .banner-download__table
+                .banner-download__table-cell
+                    span.db.banner-download__title Скачать #[br] прайс-лист
+                .banner-download__table-cell.text-right
+                    +icon('file')
+            .row: .col-lg-8
+                span.db.banner-download__text Равным образом консультация с широким активом требуют определения и уточнения соответствующий условий активизации.
+            span.db.banner-download__btns
+                a(href='#').db.banner-download__btns-btn: b СКАЧАТЬ В ФОРМАТЕ XL
+                a(href='#').db.banner-download__btns-btn: b СКАЧАТЬ В ФОРМАТЕ PDF
+
+    .hidden-xs-down
+        br
+        br
+        br
+    .block-container
+        .block-container__content.company(style="background-image: url('%=static=%img/content/company-bg.jpg');")
+            .container
+                .company__title Об интернет-магазине
+                .company__text
+                    p С другой стороны сложившаяся структура организации влечет за собой процесс внедрения и модернизации существенных финансовых и административных условий. Повседневная практика показывает, что консультация с широким активом в значительной степени обуславливает создание систем массового участия. С другой стороны консультация с широким активом позволяет выполнять важные задания по разработке соответствующий условий активизации.
+                    p Равным образом консультация с широким активом требуют определения и уточнения соответствующий условий активизации. Разнообразный и богатый опыт консультация с широким активом позволяет выполнять важные задания по разработке новых предложений.
+
+                br
+                br
+                .company__title Почему выгодно заказывать у нас:
+
+                .company__advantages
+                    -for(var i=0;i<4;i++)
+                        .company__advantages-section
+                            .company__advantages-item
+                                p.company__advantages-item-img: i.s-site
+                                p.company__advantages-item-title: b Широкий ассортимент
+                                p.company__advantages-item-text С другой стороны сложившаяся структура организации влечет за собой процесс внедрения и модернизации существенных
+                br
+                a(href="#").company__link.not-styleLink: span Подробнее о компании
+
+        .block-container__size
 
 
+    .block-container
+        .block-container__content.block-container__content_white
+            .container
+                h2 Новости
+                .news
+                    .row
+                        .col-md-4.col-sm-6
+                            a(href="#").news__item
+                                span.db.news__item-img
+                                    +img('content/news/1')
+                                    .news__item-img-content.text-center
+                                        .news__item-btn Перейти к новости
+                                span.db.news__item-date 26 апреля 2017
+                                span.db.news__item-title: span Заголовок новости, при клике попадаем на детальную, можно в две строки
+                                span.db.news__item-text Один широкий рекламный баннер с тремя картинками, которые меняются со временем, которые так же можно пролистать(по кругу).  На каждой картинке тематическая ссылка.
+                            br
+                        .col-md-4.col-sm-6
+                            a(href="#").news__item
+                                span.db.news__item-img
+                                    +img('content/news/2')
+                                    .news__item-img-content.text-center
+                                        .news__item-btn Перейти к новости
+                                span.db.news__item-date 26 апреля 2017
+                                span.db.news__item-title: span Заголовок новости, при клике попадаем на детальную, можно в две строки
+                                span.db.news__item-text Один широкий рекламный баннер с тремя картинками, которые меняются со временем, которые так же можно пролистать(по кругу).  На каждой картинке тематическая ссылка.
+                            br
+                        .col-md-4.col-sm-6
+                            a(href="#").news__item
+                                span.db.news__item-img
+                                    +img('content/news/3')
+                                    .news__item-img-content.text-center
+                                        .news__item-btn Перейти к новости
+                                span.db.news__item-date 26 апреля 2017
+                                span.db.news__item-title: span Заголовок новости, при клике попадаем на детальную, можно в две строки
+                                span.db.news__item-text Один широкий рекламный баннер с тремя картинками, которые меняются со временем, которые так же можно пролистать(по кругу).  На каждой картинке тематическая ссылка.
+                            br
+                //br
+                .subscription
+                    .subscription__title Подписывайтесь на рассылку
+                    .subscription__form
+                        input(placeholder="Введите вашу эл. почту").subscription__form-input
+                        button.btn.btn-green.subscription__form-btn ПОДПИСАТЬСЯ
+
+        .block-container__size
 
 
 

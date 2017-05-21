@@ -5,3 +5,14 @@ mixin img(src, format)
 
 mixin icon(iconName, className, iconWidth, iconHeight)
     != jadeHelpers.Icon.call(locals, {iconName: iconName, className: className, iconWidth: iconWidth, iconHeight: iconHeight})
+
+
+mixin style-input(title, type, name)
+    - type = type || 'checkbox'
+    - name = name || 'aa'
+    label.style-input-checkbox
+        input.style-input-checkbox__input(type=type, name=name)
+        span.style-input-checkbox__titles
+            span: span.style-input-checkbox__titles-el
+            span.style-input-checkbox__titles-title= title
+

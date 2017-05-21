@@ -1,3 +1,111 @@
-.item{
-  
+.item {
+  background-color: white;
+  border: 1px solid #e0e4ed !important;
+  border-radius: 4px;
+  display: block;
+  font-size: 14px;
+  @include tr;
+  &__head{
+    position: relative;
+    border-bottom: 1px solid #e0e4ed;
+    padding-top: 37px;
+    &-top{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      color: #898e9a;
+      font-size: 11px;
+      font-weight: 400;
+      padding: 8px 18px;
+    }
+    &-stickers{
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+  &__sticker{
+    position: relative;
+    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.25);
+    color: white;
+    font-size: 13px;
+    font-weight: 700;
+    margin: 10px;
+    display: block;
+    &-icon{
+      svg{
+        display: block;
+      }
+    }
+    &-title{
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      margin-top: -12px;
+      text-align: center;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+  &__body{
+    padding: 22px 20px;
+    padding-top: 13px;
+    >*{
+      +*{
+        padding-top: 10px;
+      }
+    }
+  }
+  &__img{
+    text-align: center;
+    overflow: hidden;
+    img{
+      display: inline-block;
+      vertical-align: middle;
+      height: 294px;
+      max-width: 10000px;
+    }
+  }
+  &__title{
+    color: #898e9a;
+    font-size: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  &__price{
+    color: #43464d;
+    font-size: 16px;
+  }
+  &__btn{
+    .btn{
+      border: 1px solid #fff;
+      padding: 10px 23px;
+      &:not(:hover){
+        box-shadow: none;
+        border-color: #43464d;
+        text-shadow: none;
+        color: #52555c;
+        background-color: transparent;
+      }
+    }
+  }
+  &:hover{
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.15);
+  }
 }
+
+.itemList{
+  font-size: 0;
+  margin: -15px;
+  &__section{
+    display: inline-block;
+    vertical-align: top;
+    padding: 15px;
+    width: 33.33%;
+  }
+}
+

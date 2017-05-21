@@ -10,6 +10,7 @@
 @import "libraries/bootstrap/navs";
 @import "libraries/bootstrap/dropdowns";
 
+
 a{
   //color: #e74700;
   //text-decoration: underline;
@@ -107,6 +108,9 @@ p {
 hr{
   border-top-color: #cdcdcd;
   margin: 40px 0;
+  &.two{
+    margin: 20px 0;
+  }
 }
 
 ol, ul{
@@ -232,62 +236,35 @@ table{
 
 .pagination{
   @include nl;
-  font-size: 0;
-  margin: 20px -5px;
-  margin-bottom: -5px;
-
+  //font-size: 0;
+  //margin: 20px -5px;
+  //margin-bottom: -5px;
+  margin: -2px;
+  display: inline-block;
+  vertical-align: middle;
   li{
     display: inline-block;
-    font-weight: 400;
-    padding: 5px;
-    &:not(.active){
-      >*{
-        &:hover{
-          //outline: 2px solid #fd6910;
-          //outline-offset: -2px;
-          //color: #fd6910;
-          border-color: #0b6ab3;
-        }
+    vertical-align: middle;
+    text-align: center;
+    padding: 2px;
+    >*{
+      display: block;
+      color: #43464d;
+      font-weight: 400;
+      border-radius: 4px;
+      width: 20px;
+      height: 20px;
+      line-height: 20px;
+      @include tr;
+      &:hover{
+        background-color: #fff;
       }
     }
     &.active{
       >*{
-        background-color: #fc0;
-        color: black;
-        span{
-          border-bottom-color: transparent;
-        }
-      }
-    }
-    &.next{
-      width: auto;
-      padding-left: 10px;
-      padding-right: 10px;
-      >*{
-        //border: 1px solid #bebebe;
-        padding: 0 15px;
-      }
-      i{
-        margin-left: 40px;
-        margin-top: -2px;
-      }
-    }
-    >*{
-      width: 35px;
-      height: 35px;
-      display: block;
-      text-align: center;
-      line-height: 38px;
-      font-weight: 400;
-      text-decoration: none;
-      color: #575757;
-      border: none;
-      font-size: 18px;
-      span{
-        @include link-border-color(#575757);
-      }
-      small{
-        font-size: 12px;
+        color: white;
+        font-weight: 700;
+        background-color: #92c842;
       }
     }
   }
@@ -488,17 +465,86 @@ table{
   }
 }
 
-.style-radio{
+.style-input-checkbox{
   display: inline-block;
   cursor: pointer;
   color: #43464d;
   line-height: 20px;
   &__input{
     display: none;
-    &:checked ~ .style-radio__titles{
-      .style-radio__titles-el {
-        &:after {
-          opacity: 1;
+    //&:checked ~ .style-radio__titles{
+    //  .style-radio__titles-el {
+    //    &:after {
+    //      opacity: 1;
+    //    }
+    //  }
+    //}
+    &[type="radio"]{
+      &~.style-input-checkbox__titles{
+        .style-input-checkbox__titles-el{
+          width: 20px;
+          height: 20px;
+          border: 1px solid #43464d;
+          border-radius: 50%;
+          display: inline-block;
+          vertical-align: middle;
+          position: relative;
+          &:after{
+            content: '';
+            display: block;
+            width: 14px;
+            height: 14px;
+            background-color: #92c842;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -7px;
+            margin-left: -7px;
+            opacity: 0;
+            @include tr;
+          }
+        }
+      }
+      &:checked~.style-input-checkbox__titles{
+        .style-input-checkbox__titles-el{
+          &:after {
+            opacity: 1;
+          }
+        }
+      }
+    }
+    &[type="checkbox"]{
+      &~.style-input-checkbox__titles{
+        .style-input-checkbox__titles-el{
+          width: 20px;
+          height: 20px;
+          border: 1px solid #43464d;
+          border-radius: 4px;
+          display: inline-block;
+          vertical-align: middle;
+          @include tr;
+          position: relative;
+          text-align: center;
+          &:after{
+            content: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaWRZTWlkIiB3aWR0aD0iMTQuMTI0IiBoZWlnaHQ9IjEwLjU5MyIgdmlld0JveD0iMCAwIDE0LjEyNCAxMC41OTMiPjxkZWZzPjxzdHlsZT4uY2xzLTF7ZmlsbDojZmZmO2ZpbGwtcnVsZTpldmVub2RkfTwvc3R5bGU+PC9kZWZzPjxwYXRoIGQ9Ik0xNC4xMzMgMi4xMTdMNy43NjkgOC40ODFsLTIuMTIxIDIuMTIxLTUuNjU3LTUuNjU3IDIuMTIxLTIuMTIxIDMuNTM2IDMuNTM1IDYuMzY0LTYuMzY0IDIuMTIxIDIuMTIyeiIgY2xhc3M9ImNscy0xIi8+PC9zdmc+');
+            @include tr;
+            //position: absolute;
+            //top: 50%;
+            //left: 50%;
+            //margin-top: -10px;
+            display: inline-block;
+            opacity: 0;
+          }
+        }
+      }
+      &:checked~.style-input-checkbox__titles{
+        .style-input-checkbox__titles-el{
+          border-color: #92c842;
+          background-color: #92c842;
+          &:after {
+            opacity: 1;
+          }
         }
       }
     }
@@ -513,35 +559,39 @@ table{
       }
     }
     &-el{
-      width: 20px;
-      height: 20px;
-      border: 1px solid #43464d;
-      border-radius: 50%;
-      display: inline-block;
-      vertical-align: middle;
-      position: relative;
-      &:after{
-        content: '';
-        display: block;
-        width: 14px;
-        height: 14px;
-        background-color: #92c842;
-        border-radius: 50%;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        margin-top: -7px;
-        margin-left: -7px;
-        opacity: 0;
-        @include tr;
-      }
+
     }
   }
 }
 
+//slick-dots
+.slick-arrow-style{
+  position: relative;
+  .slick-arrow{
+    position: absolute;
+    @include btn-clear;
+    top: 0;
+    height: 100%;
+    fill: #43464d;
+    width: 70px;
+    z-index: 2;
+    &:hover{
+      fill: #7cc623;
+    }
+    &.slick-prev{
+      right: 100%;
+    }
+    &.slick-next{
+      left: 100%;
+    }
+  }
+}
 
 @include text-border-bottom('black', #515b5e);
 @include text-border-bottom('blackTwo', #626262);
 @include text-border-bottom('blackThree', #43464d);
 @include text-border-bottom('white', #fff);
 @include text-border-bottom('birch', #e9fff2);
+@include text-border-bottom('grey', #7c8689);
+@include text-border-bottom('greyTwo', #888);
+@include text-border-bottom('blue', #00a8ec);

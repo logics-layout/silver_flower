@@ -88,6 +88,17 @@
   }
 
   // [converter] extracted a& to a.btn
+
+  &.btn-border{
+    &:not(:hover){
+      border: 1px solid #43464d;
+      color: #43464d;
+      box-shadow: none;
+      text-shadow: none;
+      background-color: transparent;
+      margin: -1px;
+    }
+  }
 }
 
 a.btn {
@@ -168,6 +179,9 @@ a.btn {
 .btn-md {
   padding-left: 14px;
   padding-right: 14px;
+}
+.btn-sm {
+  padding: 10px 25px;
 }
 //.btn-xl {
 //  font-size: 15px;

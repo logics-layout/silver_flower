@@ -5,3 +5,21 @@ mixin item(num)
         - rowItem = item.list[num]
     - else
         - rowItem = item.list[0]
+
+    a(href="#").item
+        span.db.item__head
+            span.db.item__head-top
+                span.db= rowItem.art
+            span.db.item__img: +img(rowItem.img)
+            .item__head-stickers
+                - if(rowItem.sticker)
+                    span.db.item__sticker(style="fill:"+rowItem.sticker.color)
+                        span.db.item__sticker-icon: +icon('stiker')
+                        span.db.item__sticker-title= rowItem.sticker.title
+
+
+        span.db.item__body.text-center
+            span.db.item__title: b= rowItem.title
+            span.db.item__price: b= rowItem.price
+            span.db.item__btn: button.btn.btn-green В КОРЗИНУ
+

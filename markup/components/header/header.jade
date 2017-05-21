@@ -1,53 +1,55 @@
 mixin header(data)
-    .header-mobile.hidden-lg-up.not-styleLink
-        .header-mobile__table
-            .header-mobile__table-cell.header-mobile__table-cell_btn
-                button.header-mobile__btn.header-mobile__btn_toggle-menu
-                    .mobile-list-anim
-                        input(type="checkbox", id="header-bottom-toggleMenuMbl")
-                        label.menuTopMobel(for="header-bottom-toggleMenuMbl")
-                            span.menu-mobile
-                                span.menu-mobile-hamburger.one
-                                span.menu-mobile-hamburger.two
-                                span.menu-mobile-hamburger.three
+    .hidden-lg-up.not-styleLink
+        .header-mobile
+            .header-mobile-fix
+                .header-mobile__table
+                    .header-mobile__table-cell.header-mobile__table-cell_btn
+                        button.header-mobile__btn.header-mobile__btn_toggle-menu
+                            .mobile-list-anim
+                                input(type="checkbox", id="header-bottom-toggleMenuMbl")
+                                label.menuTopMobel(for="header-bottom-toggleMenuMbl")
+                                    span.menu-mobile
+                                        span.menu-mobile-hamburger.one
+                                        span.menu-mobile-hamburger.two
+                                        span.menu-mobile-hamburger.three
 
 
-            .header-mobile__table-cell.text-center
-                a(href='#').header-mobile__phone +7 (905) 456 12 12
+                    .header-mobile__table-cell.text-center
+                        a(href='#').header-mobile__phone +7 (905) 456 12 12
 
-            .header-mobile__table-cell.header-mobile__table-cell_btn
-                button.header-mobile__btn: +icon('profile')
-            .header-mobile__table-cell.header-mobile__table-cell_btn
-                button.header-mobile__btn
-                    span.header-mobile__btn-basket-icon: +icon('basket', 'svg-basket', 16, 12)
-                    span.header-mobile__btn-basket-count: b 2
+                    .header-mobile__table-cell.header-mobile__table-cell_btn
+                        button.header-mobile__btn: +icon('profile')
+                    .header-mobile__table-cell.header-mobile__table-cell_btn
+                        button.header-mobile__btn
+                            span.header-mobile__btn-basket-icon: +icon('basket', 'svg-basket', 16, 12)
+                            span.header-mobile__btn-basket-count: b 2
 
-        .header-mobile__popup
-            a(herf='#').header-mobile__popup-toggle
-            .header-mobile__popup-content
-                .header-mobile__popup-list
-                    ul
-                        li.open.active
-                            a(href='#') Каталог товаров
-                                em: +icon('arrow-bottom')
+                .header-mobile__popup
+                    a(herf='#').header-mobile__popup-toggle
+                    .header-mobile__popup-content
+                        .header-mobile__popup-list
                             ul
-                                li: a(href="#") Женская одежда
-                                li: a(href="#") Мужская одежда
-                                li: a(href="#") Детская одежда
-                                li: a(href="#") Аксессуары
-                                li: a(href="#") Распродажа
+                                li.open.active
+                                    a(href='#') Каталог товаров
+                                        em: +icon('arrow-bottom')
+                                    ul
+                                        li: a(href="#") Женская одежда
+                                        li: a(href="#") Мужская одежда
+                                        li: a(href="#") Детская одежда
+                                        li: a(href="#") Аксессуары
+                                        li: a(href="#") Распродажа
 
-                        li: a(href='#') Акции
-                        li: a(href='#') Системы скидок
-                        li: a(href='#') Доставка
-                        li: a(href='#') Оплата
-                        li: a(href='#') Возврат и обмен
-                        li: a(href='#') Оптовикам
-                        li: a(href='#') Новости
-                        li: a(href='#') О компании
-                        li: a(href='#') Контакты
+                                li: a(href='#') Акции
+                                li: a(href='#') Системы скидок
+                                li: a(href='#') Доставка
+                                li: a(href='#') Оплата
+                                li: a(href='#') Возврат и обмен
+                                li: a(href='#') Оптовикам
+                                li: a(href='#') Новости
+                                li: a(href='#') О компании
+                                li: a(href='#') Контакты
 
-        a(href="#").header-mobile__logo: +img('assets/header/logo', 'png')
+            a(href="#").header-mobile__logo: +img('assets/header/logo', 'png')
 
 
     .header(class!=data).not-styleLink.hidden-md-down
@@ -203,6 +205,9 @@ mixin header(data)
                             input.header__search-input(placeholder="Поиск по сайту")
                             button.header__search-btn: +icon('search')
 
+        if data
+            .header__slider
+                .header__slider-section
 
 
 

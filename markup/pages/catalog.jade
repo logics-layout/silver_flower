@@ -1,0 +1,189 @@
+extends main
+
+
+include ../components/item/item
+
+block head
+    - var headData = {title: "Оформление заказа"}
+    - var breadcrumb = true
+
+    link(href="%=static=%css/separate-css/slick.css", rel="stylesheet", type="text/css")
+
+block content
+    br
+    br.hidden-md-down
+    .hidden-lg-up
+        ul.breadcrumb.not-styleLink
+            li: a(href="#"): span Главная
+            li: a(href="#"): span Каталог товаров
+            li: span Футболки
+
+        h1 Футболки
+
+    .row
+        .col-lg-3
+            .hidden-lg-up
+                button.catalog-filter-toggle-btn.filter-toggle-btn Фильтрация товаров &nbsp;#[span.caret]
+            .catalog-filter.catalog-filter-toggle
+                br.hidden-lg-up
+                .catalog-filter__padding.catalog-filter__titleBlock Выберите параметры
+                .catalog-filter__padding.catalog-filter__content
+                    p.catalog-filter__content-title.text-big: b Выберите пол:
+                    .catalog-filter__content-listInput
+                        .catalog-filter__content-listInput-section
+                            +style-input('Все')
+                        .catalog-filter__content-listInput-section
+                            +style-input('Мужской')
+                        .catalog-filter__content-listInput-section
+                            +style-input('Женский')
+                .catalog-filter__padding.catalog-filter__content
+                    p.catalog-filter__content-title.text-big: b Цена:
+                    .catalog-filter__priceRange.color-grey
+                        .catalog-filter__priceRange-cell
+                            span от
+                            |&nbsp;&nbsp;
+                            input.catalog-filter__priceRange-input.text-center(value="250")
+                        .catalog-filter__priceRange-cell
+                            span до
+                            |&nbsp;&nbsp;
+                            input.catalog-filter__priceRange-input.text-center(value="3 200")
+
+                .catalog-filter__padding.catalog-filter__content
+                    p.catalog-filter__content-title.text-big: b Тип модели:
+                    .catalog-filter__content-listInput
+                        .catalog-filter__content-listInput-section
+                            +style-input('Любая модель')
+                        .catalog-filter__content-listInput-section
+                            +style-input('С рукавом')
+                        .catalog-filter__content-listInput-section
+                            +style-input('Без рукава')
+                .catalog-filter__padding.catalog-filter__content
+                    p.catalog-filter__content-title.text-big: b Выберите размер:
+                    .catalog-filter__content-listInput
+                        .catalog-filter__content-listInput-section
+                            +style-input('Любой размер')
+                        .catalog-filter__content-listInput-section
+                            +style-input('S')
+                        .catalog-filter__content-listInput-section
+                            +style-input('L')
+                        .catalog-filter__content-listInput-section
+                            +style-input('M')
+                        .catalog-filter__content-listInput-section
+                            +style-input('XL')
+                .catalog-filter__padding.catalog-filter__content.text-center
+                    a(href="#").text-big.db.not-styleLink.color-blackTwo: span.color-blackTwo__title.color-blackTwo__title_viewBorder.color-blackTwo__title_dashed Очистить фильтр
+                    br
+                    button.btn.btn-green.btn-width ПРИМЕНИТЬ ФИЛЬТР
+                .hidden-lg-up
+                    br
+                    a(href='#').db.text-center.filter-toggle-btn.not-styleLink.color-black #[span.dib: +icon('clear')] &nbsp; #[span.color-black__title.color-black__title_dashed.color-black__title_viewBorder Закрыть фильтр]
+
+        .col-lg-9
+            br.hidden-lg-up
+            .hidden-md-down
+                ul.breadcrumb.not-styleLink
+                    li: a(href="#"): span Главная
+                    li: a(href="#"): span Каталог товаров
+                    li: span Футболки
+
+                h1 Футболки
+            .row
+                .col-xl-9.col-lg-8.col-xs-12
+                    .catalog-sort.text-big
+                        .catalog-sort__cell
+                            span.catalog-sort__title: b Сортировать по:
+                        .catalog-sort__cell
+                            .catalog-sort__sections
+                                .catalog-sort__sections-section
+                                    label.catalog-sort__item.color-black
+                                        input(type="radio", name="rfv", checked).catalog-sort__item-input
+                                        span.catalog-sort__item-title: span.color-black__title.color-black__title_viewBorder.color-black__title_dashed Популярные
+                                .catalog-sort__sections-section
+                                    label.catalog-sort__item.color-black
+                                        input(type="radio", name="rfv").catalog-sort__item-input
+                                        span.catalog-sort__item-title: span.color-black__title.color-black__title_viewBorder.color-black__title_dashed Цена
+                                .catalog-sort__sections-section
+                                    label.catalog-sort__item.color-black
+                                        input(type="radio", name="rfv").catalog-sort__item-input
+                                        span.catalog-sort__item-title: span.color-black__title.color-black__title_viewBorder.color-black__title_dashed Названия
+                                .catalog-sort__sections-section
+                                    label.catalog-sort__item.color-black
+                                        input(type="radio", name="rfv").catalog-sort__item-input
+                                        span.catalog-sort__item-title: span.color-black__title.color-black__title_viewBorder.color-black__title_dashed Новинки
+                .col-xl-3.col-lg-4.col-xs-12
+                    br.hidden-lg-up
+                    .catalog-pagination
+                        ul.pagination.not-styleLink.text-big.text-left
+                            li: a(href="#") 1
+                            li.active: span 2
+                            li: a(href="#") 3
+                            li: a(href="#") 4
+                            li: a(href="#") 5
+                            li: a(href="#") >>
+            br
+            .itemList
+                -for(var i=0;i<9;i++)
+                    .itemList__section
+                        +item(i)
+
+
+            br
+            .catalog-pagination
+                ul.pagination.not-styleLink.text-big.text-left
+                    li: a(href="#") 1
+                    li.active: span 2
+                    li: a(href="#") 3
+                    li: a(href="#") 4
+                    li: a(href="#") 5
+                    li: a(href="#") >>
+
+
+
+
+
+
+
+
+
+
+
+
+block script
+    script(src="%=static=%js/separate-js/slick.min.js" type="text/javascript")
+    script(src="%=static=%js/separate-js/jquery.magnific-popup.min.js" type="text/javascript")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

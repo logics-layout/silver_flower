@@ -7,7 +7,7 @@ mixin modal()
                     .text-center
                         p.modal-title Связаться с нами
                         p.modal-titleSub Заполните форму и наши менеджеры свяжуться с вами в ближайшее время
-
+                    br.hidden-md-down
                     .row
                         .col-lg-4
                             .form-group.required.required_yes
@@ -28,7 +28,7 @@ mixin modal()
                             span.desc-required #[span.desc-required__nowrap &nbsp;#[span.desc-required__icon *] —&nbsp;&nbsp;] #[span обязательные для заполнения поля]
 
 
-    #callback-yes(class="modal fade").modal-show
+    #callback-yes(class="modal fade")
         .modal-dialog.modal-sm
             .modal-content
                 .modal-body
